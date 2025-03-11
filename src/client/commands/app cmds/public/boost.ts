@@ -36,7 +36,6 @@ export default class BoostCommand extends Command {
 				content: responses.unknownMessage,
 				flags: MessageFlags.Ephemeral,
 			});
-
 		await Promise.allSettled([
 			users.updateOne({ id: context.author.id }, { $inc: { boosts: -1 } }),
 			messages.updateOne(
